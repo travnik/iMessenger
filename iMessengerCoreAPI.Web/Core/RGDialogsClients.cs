@@ -1,35 +1,23 @@
-# iMessenger
-
-Задача
-
-Написать проект WebAPI в котором будет реализован метод API поиска диалога с теми идентификаторами клиентов, которые были переданы в метод.
-Метод должен принимать список идентфикаторов клиентов для которых необходимо найти диалог. Нужно найти такой диалог, в котором есть все переданные клиенты. Если такого диалога нет, то возвращается пустой GUID.
-Если диалог найден возвращается идентификатор диалога.
-Метод должен быть описан в соотвествии со стандартом OpenAPI и доступен через SwaggerUI
-
-
-
-using System;
+п»їusing System;
 using System.Collections.Generic;
 
-namespace iMessengerCoreAPI.Models
+namespace iMessengerCoreAPI.Web.Core
 {
-
     public class RGDialogsClients
     {
         public Guid IDUnique { get; set; }
 
-        
-        public Guid IDRGDialog {get; set;}
-        public Guid IDClient {get; set;}
-        public DateTime? DateEvent {get; set;}
-        
+
+        public Guid IDRGDialog { get; set; }
+        public Guid IDClient { get; set; }
+        public DateTime? DateEvent { get; set; }
+
 
 
         public List<RGDialogsClients> Init()
         {
             List<RGDialogsClients> L1 = new List<RGDialogsClients>();
-            
+
 
             var IDClient1 = new Guid("4b6a6b9a-2303-402a-9970-6e71f4a47151");
             var IDClient2 = new Guid("c72e5cb5-d6b4-4c0c-9992-d7ae1c53a820");
@@ -42,20 +30,23 @@ namespace iMessengerCoreAPI.Models
 
 
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog1,
                 IDClient = IDClient1
             });
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog1,
                 IDClient = IDClient2
             });
 
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog1,
                 IDClient = IDClient3
@@ -64,13 +55,15 @@ namespace iMessengerCoreAPI.Models
 
             Guid IDRGDialog2 = new Guid("19f6f751-7f8d-41fa-8261-709028650592");
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog2,
                 IDClient = IDClient1
             });
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog2,
                 IDClient = IDClient2
@@ -79,19 +72,22 @@ namespace iMessengerCoreAPI.Models
             Guid IDRGDialog3 = new Guid("83ebeb2b-c315-48a2-b6e5-f0324de57a9f");
 
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog3,
                 IDClient = IDClient3
             });
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog3,
                 IDClient = IDClient4
             });
 
-            L1.Add(new RGDialogsClients {
+            L1.Add(new RGDialogsClients
+            {
                 IDUnique = Guid.NewGuid(),
                 IDRGDialog = IDRGDialog3,
                 IDClient = IDClient5
@@ -101,9 +97,7 @@ namespace iMessengerCoreAPI.Models
 
 
         }
-        
+
     }
 
-    
 }
-
